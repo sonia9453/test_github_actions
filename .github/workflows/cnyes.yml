@@ -1,0 +1,35 @@
+name: 抓取鉅亨網新聞
+
+on:
+  schedule:
+    - cron: '* * * * *'  # 每天 UTC 00:00 執行（台灣時間 +8 小時）
+  workflow_dispatch:       # 允許手動觸發
+
+jobs:
+  update-sheet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install requests pandas # openpyxl
+        run: |
+          pip install gspread google-auth
+
+      - name: Run script
+        run: python update_sheet.py
+        
+      - name: save csv
+        run:|
+          git config --global user,name "Sonia"
+          git config --global user,email "todoin2024@gmail.com"
+          git add news.csv
+          git commit -m "更新鉅亨網"
+          git push origin master
+      
