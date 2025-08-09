@@ -26,7 +26,7 @@ jobs:
         run: python update_sheet.py
         
       - name: save csv
-        run:|
+        run: |
           git config --global user,name "Sonia"
           git config --global user,email "todoin2024@gmail.com"
           git add news.csv
