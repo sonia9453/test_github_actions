@@ -1,0 +1,11 @@
+name: Hello World Workflow
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 顯示問候
+        run: echo "Hello, GitHub Actions!"
