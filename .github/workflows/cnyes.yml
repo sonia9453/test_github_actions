@@ -23,7 +23,7 @@ jobs:
           pip install gspread google-auth
 
       - name: Run script
-        run: python update_sheet.py
+        run: python cnyes.py
         
       - name: save csv
         run: |
