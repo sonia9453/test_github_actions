@@ -18,9 +18,9 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install requests pandas # openpyxl
+      - name: Install 
         run: |
-          pip install gspread google-auth
+          pip install requests pandas # openpyxl
 
       - name: Run script
         run: python cnyes.py
