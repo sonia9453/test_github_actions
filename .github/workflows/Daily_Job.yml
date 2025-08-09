@@ -1,0 +1,11 @@
+name: Daily Job
+on:
+  schedule:
+    - cron: '*/5 * * * *' # UTC 時區，台灣時間要 +8
+  workflow_dispatch:
+jobs:
+  daily-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 每日提醒
+        run: echo "新的一天開始了！"
