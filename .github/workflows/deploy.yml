@@ -1,6 +1,8 @@
 name: Deploy App
 on:
-  workflow_dispatch:
+  push:              # push 事件發生時觸發（任何分支的 push）
+    # branches: [ main ] # 自動在 main 有 push 時執行  
+  workflow_dispatch: # 手動在 GitHub UI 點擊「Run workflow」按鈕執行
 # 這種呼叫方式是「呼叫別人的 repository 裡的 workflow」，叫做 workflow call reusable workflow。
 jobs:
   call-build:
