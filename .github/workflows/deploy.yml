@@ -1,7 +1,7 @@
 name: Deploy App
 on:
   workflow_dispatch:
-
+# 這種呼叫方式是「呼叫別人的 repository 裡的 workflow」，叫做 workflow call reusable workflow。
 jobs:
   call-build:
     uses: sonia9453/test_github_actions/.github/workflows/build.yml@master
