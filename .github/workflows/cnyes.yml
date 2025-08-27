@@ -33,7 +33,8 @@ jobs:
       - name: save csv
         run: |
           git config --global user.name "Sonia"
-          git config --global user.email "todoin2024@gmail.com"
+          # git config --global user.email "todoin2024@gmail.com"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com" #建議 不要硬編碼個人 git 設定（名稱與 email），但希望 commit 看起來是你自己而不是 bot 產生的情況下才需要          
           git add -A # news.csv
 
           # 避免內容未更新而讓工作流程無意義地 commit 空變動。
