@@ -1,7 +1,7 @@
 name: Daily Job
 on:
-  schedule:
-    - cron: '*/5 * * * *' # UTC 時區，台灣時間要 +8
+  # schedule:
+  #   - cron: '*/5 * * * *' # UTC 時區，台灣時間要 +8
   workflow_dispatch:
 jobs:
   daily-task:
