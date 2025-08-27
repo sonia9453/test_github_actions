@@ -3,12 +3,12 @@ name: Build Reusable
 on:
   workflow_call:
     inputs:
-      version:
+      version:          # 參數名稱
         required: true
-        type: string
+        type: string    # string、boolean、number
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Building version ${{ inputs.version }}"
+      - run: echo "Building version ${{ inputs.version }}"  # ${{ inputs.version }} 外部傳入的參數
